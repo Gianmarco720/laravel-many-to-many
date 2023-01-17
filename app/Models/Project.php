@@ -32,6 +32,6 @@ class Project extends Model
      */
     public function tecnologies(): BelongsToMany
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsToMany(Technology::class);
     }
 }
