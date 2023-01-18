@@ -3,7 +3,7 @@
 @section('content')
     <h1>Create a new type</h1>
 
-    @include('partials.error-session')
+    @include('partials.error-any')
 
     <form action="{{ route('admin.types.store') }}" method="post">
         @csrf

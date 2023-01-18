@@ -46,6 +46,14 @@
             <select multiple class="form-select form-select-sm" name="technologies[]" id="technologies">
                 <option value="" disabled>Select a technology</option>
                 @forelse ($technologies as $technology)
+                    <option value="{{ $technology->id }}"
+                        {{ in_array($technology->id, old('technologies', [])) ? 'selected' : '' }}>{{ $technology->name }}
+                    </option>
+                @empty
+                    <option value="">Sorry, no technologies available</option>
+                @endforelse
+
+                {{-- @forelse ($technologies as $technology)
                     @if ($errors->any())
                         <option value="{{ $technology->id }}"
                             {{ in_array($technology->id, old('technologies', [])) ? 'selected' : '' }}>
@@ -56,7 +64,7 @@
 
                 @empty
                     <option value="">Sorry, no technologies available</option>
-                @endforelse
+                @endforelse --}}
             </select>
         </div>
 

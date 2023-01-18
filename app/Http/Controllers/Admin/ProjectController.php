@@ -20,6 +20,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::orderByDesc('id')->get();
+        $technologies = Technology::all();
         //dd($projects);
         return view('admin.projects.index', compact('projects'));
     }
@@ -148,7 +149,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return to_route('admin.projects.index')->with('message', 'Project Deleted Successfully');
+        return to_route('admin.projects.index')->with('message', "Project id: $project->id Deleted Successfully");
 
         if ($project->cover_image) {
             Storage::delete($project->cover_image);

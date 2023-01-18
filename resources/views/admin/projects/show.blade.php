@@ -23,13 +23,13 @@
 
     <!-- Show the project's technology -->
     <div class="technologies">
-        <strong>Technologies used: </strong>
+        <strong>Technologies:</strong>
         @if (count($project->technologies) > 0)
             @foreach ($project->technologies as $technology)
-                <span>#{{ $technology->name }}</span>
+                <span>{{ $technology->name }}</span>
             @endforeach
         @else
-            <span>No technology associated to the current project</span>
+            <span>Not technologies associated to the current project</span>
         @endif
     </div>
 
