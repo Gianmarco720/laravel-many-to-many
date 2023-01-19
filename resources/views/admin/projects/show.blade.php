@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
     @if ($project->cover_image)
         <img width="140" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
     @else
@@ -26,7 +25,7 @@
         <strong>Technologies:</strong>
         @if (count($project->technologies) > 0)
             @foreach ($project->technologies as $technology)
-                <span>{{ $technology->name }}</span>
+                <span>#{{ $technology->name }}</span>
             @endforeach
         @else
             <span>Not technologies associated to the current project</span>
@@ -37,5 +36,4 @@
     <div class="content mt-3">
         {{ $project->body }}
     </div>
-
 @endsection

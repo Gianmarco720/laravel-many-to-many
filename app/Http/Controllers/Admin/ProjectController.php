@@ -74,7 +74,7 @@ class ProjectController extends Controller
         $project = Project::create($val_data);
 
         // add the project's technology
-        if ($request->has('tecnologies')) {
+        if ($request->has('technologies')) {
             $project->technologies()->attach($val_data['technologies']);
         }
 
